@@ -1,0 +1,94 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #212121;
+    --card-bg-color: #eeeeee;
+    --card-hover-color: #0278ae;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    padding: 8rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 400;
+}
+
+.body--overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%; 
+    background-color: darkred;
+    background-image: linear-gradient(to bottom, #801336, #d9205b);
+    transition: 0.5s;
+    transition-timing-function: linear;
+}
+
+main{
+    
+    display:grid;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
+.card{
+    grid-column: span 3;
+    background-color: var(--card-bg-color);
+    padding: 4rem;
+    border-radius: 0.5rem;
+    transition: 0.5s all;
+    animation-name: start;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+.card:hover{
+    background-color: var(--card-hover-color);
+    cursor: pointer;
+    color: var(--card-bg-color);
+}
+
+@keyframes start{
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@media (max-width: 75rem){
+    .card{
+        grid-column: span 6;
+    }
+    .body--overlay{
+        height:500%;
+    }
+}
+
+
+@media (max-width: 43.75rem){
+    .card{
+        grid-column: span 12;
+    }
+
+    body{
+        padding: 2rem;
+    }
+}

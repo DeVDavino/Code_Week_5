@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Responsive images</title>
+</head>
+<body>
+    <main>
+        <picture>
+            <source src="./img/plezier_640.webp" type="image/webp">
+            <img src="img/plezier_1920.webp" alt="Indian guy enjoying book" srcset="./img/plezier_640.webp 640w, 
+            ./img/plezier_1280.webp 1280w,  
+            ./img/plezier_1920.webp 1920w" 
+            sizes="(min-width: 1500px) 1920px, (min-width: 1000px) 1280px, 640px">
+        </picture>
+    </main>
+</body>
+</html>
